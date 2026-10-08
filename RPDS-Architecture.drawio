@@ -1,0 +1,278 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0" version="24.7.17">
+  <diagram id="rpds-working" name="System Working">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1680" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p1_title" value="Road Pothole Detection System — End-to-End Working" style="text;html=1;align=center;verticalAlign=middle;fontSize=22;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="40" y="14" width="1020" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_sub" value="IoT + AI Based Smart Road Monitoring Prototype — from sensor to map" style="text;html=1;align=center;verticalAlign=middle;fontSize=13;fontColor=#888888;" vertex="1" parent="1">
+          <mxGeometry x="40" y="50" width="1020" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_road" value="Road Surface Event&lt;br&gt;(pothole / speed breaker / rough patch)" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;fontColor=#333333;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="390" y="88" width="320" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_veh" value="VEHICLE — ON-EDGE PROTOTYPE" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;verticalAlign=top;align=center;spacingTop=8;fontSize=14;fontStyle=1;fontColor=#333333;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="140" y="175" width="820" height="415" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_mpu" value="MPU6050 Accelerometer&lt;br&gt;measures ax, ay, az (vibration)" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="p1_veh">
+          <mxGeometry x="40" y="50" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_gps" value="NEO-6M GPS Module&lt;br&gt;latitude, longitude, time" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="p1_veh">
+          <mxGeometry x="500" y="50" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_esp" value="ESP32 (edge controller)&lt;br&gt;• sample ax, ay, az @ ~100 Hz&lt;br&gt;• baseline + threshold check (MVP)&lt;br&gt;• build event JSON with GPS fix" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="p1_veh">
+          <mxGeometry x="230" y="200" width="360" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_oled" value="OLED Display&lt;br&gt;status / values" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=11;fontColor=#333333;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="p1_veh">
+          <mxGeometry x="630" y="200" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_buzz" value="Buzzer&lt;br&gt;local alert (optional)" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=11;fontColor=#333333;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="p1_veh">
+          <mxGeometry x="630" y="290" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_pwr" value="Battery /&lt;br&gt;Power Bank" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=11;fontColor=#333333;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="p1_veh">
+          <mxGeometry x="40" y="245" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_wifi" value="Wi-Fi / 4G Network&lt;br&gt;(HTTPS)" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;fontColor=#333333;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="440" y="650" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_be" value="CLOUD / BACKEND" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;verticalAlign=top;align=center;spacingTop=8;fontSize=14;fontStyle=1;fontColor=#333333;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="140" y="790" width="820" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_api" value="FastAPI Server (Python)&lt;br&gt;POST /api/events · GET /api/potholes" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="p1_be">
+          <mxGeometry x="230" y="45" width="360" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_db" value="Database (Appwrite)&lt;br&gt;stores pothole events" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;arcSize=50;fontSize=12;fontColor=#333333;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="p1_be">
+          <mxGeometry x="60" y="195" width="300" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_ml" value="ML Service&lt;br&gt;Random Forest / XGBoost classifier" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="p1_be">
+          <mxGeometry x="460" y="195" width="300" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_fe" value="WEB FRONTEND (React)" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;verticalAlign=top;align=center;spacingTop=8;fontSize=14;fontStyle=1;fontColor=#333333;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="140" y="1300" width="820" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_dash" value="React Web Dashboard&lt;br&gt;queries REST API for pothole records" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;fontColor=#333333;fillColor=#ffffff;strokeColor=#9673a6;" vertex="1" parent="p1_fe">
+          <mxGeometry x="230" y="45" width="360" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_map" value="Interactive Pothole Map&lt;br&gt;markers coloured by severity" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="p1_fe">
+          <mxGeometry x="60" y="220" width="300" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_analytics" value="Analytics / Statistics&lt;br&gt;counts, history, filters" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="p1_fe">
+          <mxGeometry x="460" y="220" width="300" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e1" value="vertical vibration / spike" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=11;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p1_road" target="p1_mpu">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" x="0" y="-20" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1_e2" value="I²C — ax, ay, az @ 100 Hz" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=11;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p1_mpu" target="p1_esp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e3" value="UART — lat, lng, time" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=11;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p1_gps" target="p1_esp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e4" value="status" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=10;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.2;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" edge="1" parent="1" source="p1_esp" target="p1_oled">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e5" value="alert" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=10;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.8;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="p1_esp" target="p1_buzz">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e6" value="power" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;dashed=1;endArrow=block;endFill=1;fontSize=10;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="p1_pwr" target="p1_esp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p1_esp" target="p1_wifi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e8" value="POST /api/events (JSON event)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=11;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p1_wifi" target="p1_api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e9" value="store event" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=11;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=0.35;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p1_api" target="p1_db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e10" value="classify / severity" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=11;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=0.65;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p1_api" target="p1_ml">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e11" value="training data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;dashed=1;endArrow=block;endFill=1;fontSize=10;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="p1_db" target="p1_ml">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e12" value="pothole events" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=11;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.3;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p1_db" target="p1_dash">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e13" value="class + confidence" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=11;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.7;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p1_ml" target="p1_dash">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e14" value="map markers" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=11;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=0.35;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p1_dash" target="p1_map">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e15" value="summary stats" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=11;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=0.65;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p1_dash" target="p1_analytics">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="rpds-detection" name="Detection Pipeline">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p2_title" value="Pothole Detection — Signal Processing Pipeline" style="text;html=1;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="40" y="16" width="1020" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_s1" value="MPU6050 raw readings&lt;br&gt;ax, ay, az" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="370" y="80" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_s2" value="Sampling @ ~100 Hz" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="370" y="190" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_s3" value="Noise filtering (low-pass / smoothing)" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="370" y="300" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_s4" value="Sliding window segmentation" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="370" y="410" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_s5" value="Feature extraction&lt;br&gt;peak · min · RMS · Δa · duration · #peaks · speed" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="370" y="520" width="360" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_note" value="magnitude = √(ax² + ay² + az²)&lt;br&gt;orientation-independent feature" style="shape=note;whiteSpace=wrap;html=1;size=16;fontSize=11;fontColor=#333333;fillColor=#fff2cc;strokeColor=#d6b656;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="530" width="250" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_s6" value="Pothole classifier&lt;br&gt;MVP: |az − baseline| &amp;gt; threshold&lt;br&gt;ML: Random Forest / XGBoost" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="370" y="665" width="360" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_d1" value="Pothole detected?" style="rhombus;whiteSpace=wrap;html=1;fontSize=13;fontStyle=1;fontColor=#333333;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="415" y="815" width="270" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_yes" value="YES — build event JSON&lt;br&gt;{event, lat, lng, severity, speed, time}" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="120" y="1000" width="320" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_no" value="NO — continue monitoring&lt;br&gt;update baseline / next window" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="660" y="1000" width="320" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_send" value="Send event to backend&lt;br&gt;Wi-Fi / 4G → FastAPI" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="120" y="1140" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p2_s1" target="p2_s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p2_s2" target="p2_s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p2_s3" target="p2_s4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p2_s4" target="p2_s5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_e5" value="feature vector" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=11;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p2_s5" target="p2_s6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p2_s6" target="p2_d1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_e7" value="YES" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=12;fontStyle=1;fontColor=#82b366;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p2_d1" target="p2_yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_e8" value="NO" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=12;fontStyle=1;fontColor=#b85450;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p2_d1" target="p2_no">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_e9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p2_yes" target="p2_send">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_e10" value="repeat @ 100 Hz" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;dashed=1;endArrow=block;endFill=1;fontSize=11;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="p2_no" target="p2_s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_e11" value="feature" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;dashed=1;endArrow=block;endFill=1;fontSize=10;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="p2_note" target="p2_s5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="rpds-fusion" name="Future Sensor Fusion">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p3_title" value="Future Scope — Camera + Vibration Sensor Fusion" style="text;html=1;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="40" y="16" width="1020" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_veh" value="Vehicle (moving prototype)" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;fontColor=#333333;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="370" y="80" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_cv" value="VEHICLE SENSING (future)" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;verticalAlign=top;align=center;spacingTop=8;fontSize=14;fontStyle=1;fontColor=#333333;dashed=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="130" y="175" width="820" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_cam" value="Onboard Camera" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="p3_cv">
+          <mxGeometry x="40" y="35" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_mpu" value="MPU6050 Accelerometer" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="p3_cv">
+          <mxGeometry x="480" y="35" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_yolo" value="YOLO pothole detector&lt;br&gt;pothole = 91%" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="p3_cv">
+          <mxGeometry x="40" y="165" width="320" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_vib" value="Vibration detection&lt;br&gt;abnormal = 87%" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="p3_cv">
+          <mxGeometry x="480" y="165" width="320" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_fusion" value="Sensor Fusion&lt;br&gt;combine confidences → final score" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=13;fontStyle=1;fontColor=#333333;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="355" y="490" width="390" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_note" value="Camera 91% + Accel 87%&lt;br&gt;→ final 94% — POTHOLE CONFIRMED" style="shape=note;whiteSpace=wrap;html=1;size=16;fontSize=11;fontColor=#333333;fillColor=#fff2cc;strokeColor=#d6b656;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="790" y="500" width="270" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_gps" value="GPS location tagging" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="370" y="640" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_cc" value="CLOUD + FRONTEND" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;verticalAlign=top;align=center;spacingTop=8;fontSize=14;fontStyle=1;fontColor=#333333;dashed=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="130" y="725" width="820" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_api" value="Cloud Server (FastAPI)" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="p3_cc">
+          <mxGeometry x="240" y="35" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_map" value="Pothole Map" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="p3_cc">
+          <mxGeometry x="40" y="175" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_analytics" value="Analytics / Heatmaps" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;fontColor=#333333;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="p3_cc">
+          <mxGeometry x="480" y="175" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_e1" value="camera feed" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=11;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=0.3;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p3_veh" target="p3_cam">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" x="0" y="-14" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p3_e2" value="vibration data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=11;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=0.7;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p3_veh" target="p3_mpu">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" x="0" y="-14" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p3_e3" value="frames" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=10;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p3_cam" target="p3_yolo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_e4" value="ax, ay, az" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=10;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p3_mpu" target="p3_vib">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_e5" value="91% pothole" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=11;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p3_yolo" target="p3_fusion">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_e6" value="87% abnormal" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=11;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p3_vib" target="p3_fusion">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;dashed=1;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="p3_fusion" target="p3_note">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_e8" value="POTHOLE CONFIRMED (94%)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=11;fontStyle=1;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p3_fusion" target="p3_gps">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_e9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p3_gps" target="p3_api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_e10" value="pothole events" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=11;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=0.3;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p3_api" target="p3_map">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_e11" value="aggregates" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fontSize=11;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=0.7;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p3_api" target="p3_analytics">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
